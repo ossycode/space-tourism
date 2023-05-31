@@ -4,12 +4,12 @@ const path = require("path");
 module.exports = {
   entry: {
     main: "./src/index.js",
-    // details: "./src/details.js",
+    destination: "./src/destination.js",
   },
   // output: {
   //   path: path.resolve(__dirname, "./dist"),
   //   filename: "[name].js",
-  // filename: "[name].[contenthash].bundle.js",
+  //   filename: "[name].[contenthash].bundle.js",
   // },
 
   module: {
@@ -30,10 +30,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./index.html",
       inject: true,
       chunks: ["main"],
       filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./destination.html",
+      inject: true,
+      chunks: ["destination"],
+      filename: "destination.html",
     }),
     // new HtmlWebpackPlugin({
     //   template: "./src/details.html",

@@ -1,0 +1,153 @@
+@use "../abstracts/mixins" as *;
+
+.destination-main {
+  display: flex;
+  flex-direction: column;
+  // padding: 4.1rem 0rem 11.2rem 3.5rem;
+  padding: 8rem 0rem 11.2rem 3.5rem;
+
+  &__heading {
+    width: max-content;
+    text-transform: uppercase;
+    color: var(--color-white);
+    padding-left: 13rem;
+
+    span {
+      opacity: 0.25;
+      font-family: var(--ff-BarlowCond);
+      margin-right: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.destination-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-top: -1.5rem;
+}
+
+.tab {
+  //   display: flex;
+  justify-content: right;
+  margin-right: 32.25rem;
+  margin-top: 6.4rem;
+  &__list {
+    display: flex;
+    gap: 3.5rem;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 3.4rem;
+    width: 28.55rem;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      color: var(--color-purple-light);
+      line-height: 1.92rem;
+      display: block;
+      height: 100%;
+
+      &.selected {
+        color: var(--color-white);
+        @include bottom-border;
+      }
+
+      &:hover {
+        @include link-hover;
+      }
+      // &:focus {
+      //   outline: none;
+      //   @include link-hover;
+      // }
+    }
+  }
+  &__item {
+    // &.selected {
+    // }
+
+    // &:focus {
+    //   outline: none;
+    //   @include link-hover;
+    // }
+  }
+}
+
+.tab-panel {
+  display: hidden;
+  // display: none;
+  //   align-items: center;
+  //   justify-content: center;
+  //   gap: 15rem;
+  width: 44.5rem;
+
+  &.current {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: var(--color-white);
+
+    // color: orchid;
+    text-transform: uppercase;
+  }
+
+  &__about {
+    font-family: var(--ff-BarlowNormal);
+    color: var(--color-purple-light);
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+  }
+  &__line {
+    margin-top: 3rem;
+    height: 0.1rem;
+    background-color: #383b4b;
+  }
+
+  &__info {
+    display: flex;
+    gap: 7.9rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+
+.avg-distance {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  &__text {
+    color: var(--color-purple-light);
+  }
+}
+.est-time {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  &__text {
+    color: var(--color-purple-light);
+  }
+}
+
+.image-container {
+  padding-left: 19rem;
+  padding-top: 9rem;
+}
+.space-image {
+  display: none;
+
+  &.current {
+    display: block;
+  }
+}

@@ -1,25 +1,27 @@
 @use "../abstracts/mixins" as *;
 
 .header {
-  background-color: var(--color-primary);
-  margin-bottom: -0.5rem;
+  //   width: 138.5rem;
+  //   height: 9.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0rem 0rem 5.5rem;
 
-  &__logo-box {
-    display: flex;
-    justify-content: space-between;
-    padding: 3rem 14rem;
+  &__line {
+    width: 48rem;
+    height: 0.1rem;
+    background-color: var(--color-white);
+    opacity: 0.25;
+    transform: translateX(5rem);
+    z-index: 1;
+  }
 
-    @include respond(tab-land) {
-      padding: 3rem 4rem;
-    }
+  &__logo-link {
+  }
 
-    @include respond(phone) {
-      padding: 2rem;
-      justify-content: space-between;
-
-      &:last-child {
-        margin-right: -1rem;
-      }
-    }
+  &__logo {
+    display: block;
+    aspect-ratio: 1;
   }
 }

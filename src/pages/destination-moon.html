@@ -1,37 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Space tourism website</title>
 </head>
-<body>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+<body class="destination-moon">
 
-  01 Pick your destination
+  <!-- <nav class="nav">
+    <a href="./index.html" class="nav__logo-link">
+      <svg class="nav__logo" aria-labelledby="logo-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="24" cy="24" r="24" fill="#FFF" />
+          <title id="logo-icon">Space Tourism logo</title>
 
-  Moon
-  Mars
-  Europa
-  Titan
+          <path fill="#0B0D17"
+            d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z" />
+        </g>
+      </svg>
+    </a>
+    <span class="nav__line"></span>
+    <ul class="nav__list">
+      <li class="nav__item  navText"> <span>00 </span> Home</li>
+      <li class="nav__item navText"> <span>01 </span> Destination</li>
+      <li class="nav__item navText"> <span>02 </span> Crew</li>
+      <li class="nav__item navText"> <span>03 </span> Technology</li>
 
-  Moon
+    </ul>
+  </nav> -->
 
-  See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-  regain perspective and come back refreshed. While you’re there, take in some history 
-  by visiting the Luna 2 and Apollo 11 landing sites.
 
-  Avg. distance
-  384,400 km
 
-  Est. travel time
-  3 days
+  <main class="destination-main">
+    <h1 class="heading__5 destination-moon__heading"><span aria-hidden="true">01</span> Pick your destination</h1>
+
+
+    <div class="destination-content">
+      <div class="image-container">
+        <div class="space-image current ">
+          <img src="/dist/assets/destination/image-moon.webp" alt="The moon picture">
+        </div>
+
+        <div class="space-image ">
+          <img src="/dist/assets/destination/image-mars.webp" alt="The Mars picture">
+        </div>
+
+        <div class="space-image">
+          <img src="/dist/assets/destination/image-europa.webp" alt="The Europa picture">
+        </div>
+
+        <div class="space-image">
+          <img src="/dist/assets/destination/image-titan.webp" alt="The Titan picture">
+        </div>
+
+      </div>
+
+      <div class="tab-container">
+
+        <div class="tab">
+          <ul class="tab__list" role="tablist">
+            <li class="tab__item selected navText">
+              <a aria-controls="moon" aria-selected="true" href="#moon" id="tab-moon" role="tab"
+                class="tab__link selected">Moon </a>
+            </li>
+
+            <li class="tab__item navText">
+              <a aria-controls="mars" aria-selected="false" href="#mars" id="tab-mars" role="tab" tabindex="-1"
+                class="tab__link">Mars </a>
+            </li>
+
+            <li class="tab__item navText">
+              <a aria-controls="europa" aria-selected="false" href="#europa" id="tab-europa" role="tab" tabindex="-1"
+                class="tab__link">Europa </a>
+            </li>
+
+            <li class="tab__item last navText">
+              <a aria-controls="titan" aria-selected="false" href="#titan" id="tab-titan" role="tab" tabindex="-1"
+                class="tab__link">Titan </a>
+            </li>
+          </ul>
+        </div>
+
+        <div aria-labelledby="tab-moon" class="tab-panel current" id="moon" role="tabpanel">
+
+          <h2 class="tab-panel__title heading__2 ">Moon</h2>
+          <p class="tab-panel__about">See our planet as you’ve never seen it before. A perfect relaxing trip away to
+            help
+            regain perspective and come back refreshed. While you’re there, take in some history
+            by visiting the Luna 2 and Apollo 11 landing sites.</p>
+
+          <div class="tab-panel__line"></div>
+
+          <div class="tab-panel__info">
+
+            <div class="avg-distance">
+              <p class="avg-distance__text subheading__2">
+                Avg. distance
+              </p>
+              <p class="avg-distance__numb subheading__1">384,400 km</p>
+            </div>
+            <div class="est-time">
+              <p class="est-time__text subheading__2">
+                Est. travel time
+              </p>
+              <p class="est-time__numb subheading__1">3 days</p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <div aria-labelledby="tab-mars" class="tab-panel hidden" id="mars" role="tabpanel">
+
+          <h2 class="tab-panel__title heading__2">mars</h2>
+          <p class="tab-panel__about">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons,
+            the tallest planetary mountain in our solar system. It’s two and a half times
+            the size of Everest!</p>
+
+          <div class="tab-panel__line"></div>
+
+          <div class="tab-panel__info">
+
+            <div class="avg-distance">
+              <p class="avg-distance__text subheading__2">
+                Avg. distance
+              </p>
+              <p class="avg-distance__numb subheading__1">225 mil. km</p>
+            </div>
+            <div class="est-time">
+              <p class="est-time__text subheading__2">
+                Est. travel time
+              </p>
+              <p class="est-time__numb subheading__1">9 months</p>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div aria-labelledby="tab-europa" class="tab-panel  hidden" id="europa" role="tabpanel">
+
+
+          <h2 class="tab-panel__title heading__2 ">Europa</h2>
+          <p class="tab-panel__about"> The smallest of the four Galilean moons orbiting Jupiter, Europa is a
+            winter lover’s dream. With an icy surface, it’s perfect for a bit of
+            ice skating, curling, hockey, or simple relaxation in your snug
+            wintery cabin.</p>
+
+          <div class="tab-panel__line"></div>
+
+          <div class="tab-panel__info">
+
+            <div class="avg-distance">
+              <p class="avg-distance__text subheading__2">
+                Avg. distance
+              </p>
+              <p class="avg-distance__numb subheading__1">628 mil. km</p>
+            </div>
+            <div class="est-time">
+              <p class="est-time__text subheading__2">
+                Est. travel time
+              </p>
+              <p class="est-time__numb subheading__1">3 years</p>
+            </div>
+          </div>
+        </div>
+
+        <div aria-labelledby="tab-titan" class="tab-panel hidden" id="titan" role="tabpanel">
+
+
+          <h2 class="tab-panel__title heading__2 ">Titan</h2>
+          <p class="tab-panel__about"> The only moon known to have a dense atmosphere other than Earth, Titan
+            is a home away from home (just a few hundred degrees colder!). As a
+            bonus, you get striking views of the Rings of Saturn.
+          </p>
+
+          <div class="tab-panel__line"></div>
+
+          <div class="tab-panel__info">
+
+            <div class="avg-distance">
+              <p class="avg-distance__text subheading__2">
+                Avg. distance
+              </p>
+              <p class="avg-distance__numb subheading__1">1.6 bil. km</p>
+            </div>
+            <div class="est-time">
+              <p class="est-time__text subheading__2">
+                Est. travel time
+              </p>
+              <p class="est-time__numb subheading__1">7 years</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+  </main>
 </body>
+
 </html>

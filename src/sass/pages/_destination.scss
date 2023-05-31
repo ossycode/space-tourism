@@ -1,0 +1,13 @@
+@use "../abstracts/mixins" as *;
+
+.destination-home {
+  background-image: linear-gradient(
+      to right,
+      rgba(242, 242, 242, 0.09),
+      rgba(242, 242, 242, 0.09)
+    ),
+    url("/dist/assets/destination/background-destination-desktop.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,7 +1,19 @@
 :root {
-  --color-primary: #24053e;
-  --color-secondary-1: #584d62;
-  --color-secondary-2: #fcf8ff;
-  --color-green: #44ffa1;
-  --color-white: #ffffff;
+  --color-primary: rgb(11, 13, 23);
+  --color-purple-light: rgb(208, 214, 249);
+  --color-white: rgb(255, 255, 255);
+  --color-nav-list: rgba(255, 255, 255, 0.04);
+  --c-white: 255, 255, 255;
+
+  // --color-pri: 11, 13, 23;
+
+  /* font-families */
+
+  --ff-bellefair: "Bellefair", serif;
+  --ff-BarlowCond: "Barlow Condensed", sans-serif;
+  --ff-BarlowNormal: "Barlow", sans-serif;
 }
+
+// .bg-dark {
+//   background-color: rgb(var(--color-pri));
+// }
