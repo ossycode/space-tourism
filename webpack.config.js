@@ -5,6 +5,8 @@ module.exports = {
   entry: {
     main: "./src/index.js",
     destination: "./src/destination.js",
+    crew: "./src/crew.js",
+    technology: "./src/technology.js",
   },
   // output: {
   //   path: path.resolve(__dirname, "./dist"),
@@ -40,6 +42,18 @@ module.exports = {
       inject: true,
       chunks: ["destination"],
       filename: "destination.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./crew.html",
+      inject: true,
+      chunks: ["crew"],
+      filename: "crew.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./technology.html",
+      inject: true,
+      chunks: ["technology"],
+      filename: "technology.html",
     }),
     // new HtmlWebpackPlugin({
     //   template: "./src/details.html",

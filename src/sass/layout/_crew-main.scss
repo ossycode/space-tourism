@@ -1,0 +1,87 @@
+.crew-main {
+  //   display: flex;
+  //   flex-direction: column;
+  padding: 0rem 0rem 0rem 16.55rem;
+  // padding: 4.1rem 0rem 11.2rem 3.5rem;
+  //   padding: 0rem 13.7rem 0rem 16.65rem;
+
+  &__heading {
+    // transform: translateY(13rem);
+  }
+}
+
+.crew-content {
+  display: flex;
+  align-items: center;
+  //   justify-content: space-around;
+  gap: 9rem;
+  //   padding: 0rem 13.7rem 0rem 16.55rem;
+  //   transform: translateY(-10rem);
+}
+
+.crew-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__title {
+    letter-spacing: 0rem;
+    opacity: 0.5;
+  }
+
+  &__name {
+    width: max-content;
+  }
+
+  &__about {
+    margin-top: 1.2rem;
+  }
+}
+
+.crew-image {
+  display: none;
+
+  &.current {
+    display: block;
+  }
+}
+
+.circle-container {
+  position: absolute;
+  left: 16.7rem;
+  top: 70rem;
+  &__dot {
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.2rem;
+    background-color: var(--color-white);
+    opacity: 0.17;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.5s ease;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &:hover {
+      background-color: var(--color-white);
+      opacity: 0.5;
+    }
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -23,3 +23,29 @@
 // .card:where(h1, h2, h3) {
 
 // }
+
+.page-heading {
+  width: max-content;
+  text-transform: uppercase;
+  color: var(--color-white);
+  position: absolute;
+  left: 16.65rem;
+  top: 21.2rem;
+  // padding-left: 13rem;
+
+  span {
+    opacity: 0.25;
+    font-family: var(--ff-BarlowCond);
+    margin-right: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.about {
+  font-family: var(--ff-BarlowNormal);
+  color: var(--color-purple-light);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  width: 44.4rem;
+}

@@ -1,7 +1,8 @@
 @use "../abstracts/mixins" as *;
 
 .nav {
-  width: 83rem;
+  // width: 83rem;
+  width: 55vw;
   height: 9.6rem;
 
   @supports (backdrop-filter: blur(4.7742rem)) {
