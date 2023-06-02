@@ -1,5 +1,12 @@
 .crew-home {
-  background-image: url(/dist/assets/crew/background-crew-desktop.jpg);
+  background-image: linear-gradient(
+      to right,
+      rgba(11, 13, 23, 0.5),
+      rgba(11, 13, 23, 0.5)
+    ),
+    url("/dist/assets/crew/background-crew-desktop.jpg");
+
+  // background-image: url("/dist/assets/crew/background-crew-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

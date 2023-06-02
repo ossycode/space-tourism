@@ -2,7 +2,7 @@
 
 .nav {
   // width: 83rem;
-  width: 55vw;
+  width: 83rem;
   height: 9.6rem;
 
   @supports (backdrop-filter: blur(4.7742rem)) {
@@ -20,7 +20,9 @@
     // width: 83rem;
     height: 100%;
     z-index: 0;
+    // padding: 3.9rem 14rem 0rem 10.5rem;
     padding: 3.9rem 14rem 0rem 10.5rem;
+
     // background-color: var(--color-nav-list);
     // backdrop-filter: blur(4.7742rem);
   }

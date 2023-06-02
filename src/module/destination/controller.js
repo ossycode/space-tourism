@@ -45,14 +45,16 @@ const changeTab = function (e) {
   //   .id === `${targetTapPenel}`;
   domEl.tabPanel.forEach((panel) => {
     panel.setAttribute("hidden", true);
+    panel.classList.remove("current");
   });
+  container.removeAttribute("hidden");
+  container.classList.add("current");
 
   domEl.tabLink.forEach((link) => {
     link.classList.remove("selected");
     link.setAttribute("aria-selected", false);
   });
-
-  container.removeAttribute("hidden");
+  // container.classList.add("current");
   tab.setAttribute("aria-selected", true);
   tab.classList.add("selected");
 
