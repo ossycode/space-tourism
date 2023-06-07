@@ -43,9 +43,25 @@
     }
   }
 
-  @if $breakpoint == desk-tab {
+  // @if $breakpoint == desk-tabLand {
+  //   @media (min-width: 48em) {
+  //     @content;
+  //   }
+  // }
+  @if $breakpoint == desk-tabLand {
+    @media (min-width: 58em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabLand-tabport {
     @media (min-width: 37.5em) {
-      //Desktop and tab devices only
+      @content;
+    }
+  }
+
+  @if $breakpoint == minAndMax {
+    @media (min-width: 37.5em) and (max-width: 58em) {
       @content;
     }
   }

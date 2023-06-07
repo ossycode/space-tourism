@@ -1,68 +1,9 @@
 @use "../abstracts/mixins" as *;
 
-.home-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 39.5rem;
-  padding: 25rem 16rem 10rem 16.5rem;
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-  }
-  &__title,
-  &__subtitle {
-    color: var(--color-purple-light);
-  }
-  //   &__h2 {
-  //     text-transform: uppercase;
-  //   }
-
-  &__text {
-    width: 44.4rem;
-    font-weight: 400;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
-    color: var(--color-purple-light);
-    // letter-spacing: 0.15rem;
-    font-family: var(--ff-BarlowNormal);
-  }
-}
-
-.explore {
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 27.4rem;
-  height: 27.4rem;
-  background-color: var(--color-white);
-  border-radius: 50%;
-  aspect-ratio: 1;
-  position: relative;
-
-  &__content {
-    color: var(--color-primary);
-    text-decoration: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(var(--c-white), 0.1);
-    opacity: 0;
-    transition: opacity 500ms linear, transform 500ms ease-in-out;
-  }
-
-  &:hover::after,
-  &:focus::after {
-    transform: scale(1.4);
-    opacity: 1;
+.main-home {
+  @include respond(desk-tabLand) {
+    padding-bottom: max(6rem, 20vh);
+    align-content: end;
+    // --container-gap: 5rem;
   }
 }

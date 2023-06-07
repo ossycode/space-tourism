@@ -1,6 +1,18 @@
+@use "../abstracts/mixins" as *;
+
 .home {
-  background-image: url("/dist/assets/home/background-home-desktop.jpg");
+  background-image: url("/dist/assets/home/background-home-mobile.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
-  // padding: 4.2rem 0rem 4rem 3.5rem;
+  background-position: bottom center;
+
+  @include respond(tabLand-tabport) {
+    background-image: url("/dist/assets/home/background-home-tablet.jpg");
+  }
+
+  @include respond(desk-tabLand) {
+    background-position: center center;
+    background-image: url("/dist/assets/home/background-home-desktop.jpg");
+  }
 }

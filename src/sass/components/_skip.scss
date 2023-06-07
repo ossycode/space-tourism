@@ -1,0 +1,13 @@
+.skip {
+  background: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  padding: 0.5em 1em;
+  margin-inline: auto;
+  position: absolute;
+  z-index: 30;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-in;
+  &:focus {
+    transform: translateY(0);
+  }
+}

@@ -1,63 +1,83 @@
 @use "../abstracts/mixins" as *;
 
-.nav {
-  // width: 83rem;
-  width: 83rem;
-  height: 9.6rem;
+nav {
+  order: 2;
+}
+
+.primary-navigation {
+  --gap: clamp(1.5rem, 5vw, 3.5rem);
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   @supports (backdrop-filter: blur(4.7742rem)) {
     & {
-      background: var(--color-nav-list);
+      background: hsl(var(--clr-white) / 0.04);
       backdrop-filter: blur(4.7742rem);
     }
   }
+  a {
+    text-decoration: none;
 
-  &__list {
-    display: flex;
-    gap: 5rem;
-    align-items: center;
-    justify-content: center;
-    // width: 83rem;
-    height: 100%;
-    z-index: 0;
-    // padding: 3.9rem 14rem 0rem 10.5rem;
-    padding: 3.9rem 14rem 0rem 10.5rem;
-
-    // background-color: var(--color-nav-list);
-    // backdrop-filter: blur(4.7742rem);
-  }
-
-  &__item {
-    list-style: none;
-    display: flex;
-    height: 100%;
-    cursor: pointer;
-    color: var(--color-white);
-    transition: all 0.2s;
-
-    &.active {
-      // border-bottom: 3px solid var(--color-white);
-      @include bottom-border;
-    }
-
-    span {
-      margin-right: 0.5rem;
-      font-family: var(--ff-BarlowCond);
+    & > span {
       font-weight: 700;
-    }
-
-    &:hover {
-      @include link-hover;
+      margin-right: 0.5em;
     }
   }
 
-  &__link {
-    &,
-    &:link,
-    &:active,
-    &:visited {
-      color: var(--color-white);
-      width: max-content;
+  @include respond(phone) {
+    // --underline-gap: 2rem;
+    // list-style: none;
+    --underline-gap: 0.5rem;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 30%;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: all 500ms ease-in-out;
+
+    &.underline-indicators > .active {
+      border: 0;
+    }
+  }
+
+  @include respond(tabLand-tabport) {
+    padding-inline: clamp(3rem, 10vw, 7rem);
+  }
+
+  @include respond(minAndMax) {
+    a > span {
+      display: none;
+    }
+  }
+
+  @include respond(desk-tabLand) {
+    margin-block: 2rem;
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    background-image: url("/dist/assets/shared/icon-hamburger.svg");
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    border: 0;
+
+    &:focus-visible {
+      outline: 5px solid white;
+      outline-offset: 5px;
     }
   }
 }
