@@ -5,5 +5,13 @@
     padding-bottom: max(6rem, 20vh);
     align-content: end;
     // --container-gap: 5rem;
+
+    & > *:first-child {
+      grid-column: 2;
+    }
+
+    & > *:last-child {
+      grid-column: 3;
+    }
   }
 }

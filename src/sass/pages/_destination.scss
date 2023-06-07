@@ -6,8 +6,18 @@
       rgba(242, 242, 242, 0.09),
       rgba(242, 242, 242, 0.09)
     ),
-    url("/dist/assets/destination/background-destination-desktop.jpg");
+    url("/dist/assets/destination/background-destination-mobile.jpg");
 
   background-repeat: no-repeat;
   background-size: cover;
+  // background-position: bottom center;
+
+  @include respond(tabLand-tabport) {
+    background-image: url("/dist/assets/destination/background-destination-tablet.jpg");
+  }
+
+  @include respond(desk-tabLand) {
+    background-position: center center;
+    background-image: url("/dist/assets/destination/background-destination-desktop.jpg");
+  }
 }

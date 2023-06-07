@@ -1,12 +1,23 @@
+@use "../abstracts/mixins" as *;
+
 .crew-home {
   background-image: linear-gradient(
       to right,
       rgba(11, 13, 23, 0.5),
       rgba(11, 13, 23, 0.5)
     ),
-    url("/dist/assets/crew/background-crew-desktop.jpg");
+    url("/dist/assets/crew/background-crew-mobile.jpg");
 
   // background-image: url("/dist/assets/crew/background-crew-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include respond(tabLand-tabport) {
+    background-image: url("/dist/assets/crew/background-crew-tablet.jpg");
+  }
+
+  @include respond(desk-tabLand) {
+    // background-position: center center;
+    background-image: url("/dist/assets/crew/background-crew-desktop.jpg");
+  }
 }

@@ -1,0 +1,65 @@
+@use "../abstracts/mixins" as *;
+
+.crew-main {
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  --flow-space: 2rem;
+  & > img {
+    grid-area: image;
+    max-width: 60%;
+    border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+  }
+
+  & > .dot-indicators {
+    grid-area: tabs;
+
+    @include respond(desk-tabLand) {
+      justify-self: start;
+    }
+  }
+
+  & > .crew-details {
+    grid-area: content;
+
+    @include respond(desk-tabLand) {
+      justify-self: start;
+    }
+
+    h2 {
+      opacity: 0.5;
+    }
+  }
+
+  @include respond(tabLand-tabport) {
+    grid-template-areas:
+      "title"
+      "content"
+      "tabs"
+      "image";
+
+    padding-bottom: 0;
+
+    img {
+      //   max-width: 80%;
+    }
+  }
+
+  @include respond(desk-tabLand) {
+    grid-template-areas:
+      ". title title ."
+      ". content image ."
+      ". tabs image .";
+
+    img {
+      max-width: 90%;
+      align-self: end;
+    }
+  }
+}
+
+.crew-name {
+  width: max-content;
+}

@@ -17,6 +17,9 @@
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
+.flow-space-small {
+  --flow-space: 0.5rem;
+}
 
 .container {
   padding-inline: 2em;
@@ -27,13 +30,15 @@
 .d-block {
   display: block;
 }
+
 .grid-container {
   text-align: center;
   display: grid;
   place-items: center;
   padding-inline: 1rem;
+  padding-bottom: 4rem;
 
-  & * {
+  p:not([class]) {
     max-width: 45ch;
   }
 
@@ -44,13 +49,11 @@
         1rem,
         1fr
       );
+  }
 
-    & > *:first-child {
-      grid-column: 2;
-    }
-
-    & > *:last-child {
-      grid-column: 3;
+  &.crew-main {
+    @include respond(tabLand-tabport) {
+      padding-bottom: 0px;
     }
   }
 }
@@ -101,7 +104,7 @@
 
 .underline-indicators > * {
   cursor: pointer;
-  padding: var(--underline-gap, 1rem) 0;
+  padding: var(--underline-gap, 0.5rem) 0;
   border: 0;
   border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
 }

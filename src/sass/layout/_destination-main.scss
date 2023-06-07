@@ -1,1 +1,101 @@
 @use "../abstracts/mixins" as *;
+.destination-main {
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  --flow-space: 2rem;
+  & > img {
+    grid-area: image;
+    max-width: 60%;
+  }
+
+  & > .tab-list {
+    grid-area: tabs;
+
+    @include respond(desk-tabLand) {
+      justify-self: start;
+    }
+
+    button {
+      background-color: transparent;
+    }
+  }
+
+  & > .destination-info {
+    grid-area: content;
+
+    @include respond(desk-tabLand) {
+      justify-self: start;
+    }
+  }
+
+  @include respond(desk-tabLand) {
+    justify-items: start;
+    // align-content: start;
+    grid-template-areas:
+      ". title title ."
+      ". image tabs ."
+      ". image content .";
+
+    img {
+      max-width: 90%;
+    }
+  }
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+
+  p {
+    font-size: 1.75rem;
+  }
+
+  @include respond(tabLand-tabport) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  @include respond(desk-tabLand) {
+    justify-content: start;
+    --gap: min(6vw, 6rem);
+  }
+}
+
+.numbered-title {
+  grid-area: title;
+
+  @include respond(tabLand-tabport) {
+    justify-self: start;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  @include respond(desk-tabLand) {
+    margin-left: 0px;
+  }
+}
+
+// .grid-destination {
+//   text-align: center;
+//   display: grid;
+//   place-items: center;
+//   padding-inline: 1rem;
+//   padding-bottom: 4rem;
+
+//   & * {
+//     max-width: 45ch;
+//   }
+
+//   @include respond(desk-tabLand) {
+//     text-align: left;
+//     column-gap: var(--container-gap, 2rem);
+//     grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+//         1rem,
+//         1fr
+//       );
+//   }
+// }
