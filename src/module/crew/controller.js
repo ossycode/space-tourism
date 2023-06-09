@@ -1,44 +1,58 @@
 import * as domEl from "./dom-elements";
+import { changeTabFocus } from "../shared";
 
 let slideIndex = 0;
 let slides = domEl.slidePanel;
+
+domEl.tablist.addEventListener("keydown", () =>
+  changeTabFocus(event, domEl.dots)
+);
 
 domEl.dots.forEach((dot) => {
   dot.addEventListener("click", (e) => {
     const tagetDot = e.target;
     slideIndex = tagetDot.dataset.id;
+
+    domEl.tablist
+      .querySelector('[aria-selected="true"]')
+      .setAttribute("aria-selected", false);
+
     slides.forEach((slide) => {
-      slide.style.display = "none";
+      slide.setAttribute("hidden", true);
       if (slide.dataset.id === tagetDot.dataset.id) {
-        let show = document.getElementsByClassName("show");
-        if (show.length > 0) {
-          show[0].className = show[0].className.replace("show", "");
-        }
-        tagetDot.className += " show";
-        slide.style.display = "flex";
+        slide.removeAttribute("hidden");
+        tagetDot.setAttribute("aria-selected", true);
+      }
+    });
+
+    domEl.slideImage.forEach((image) => {
+      image.setAttribute("hidden", true);
+      if (image.dataset.id === tagetDot.dataset.id) {
+        image.removeAttribute("hidden");
+        // tagetDot.setAttribute("aria-selected", true);
       }
     });
   });
 });
 
-showSlides();
+// showSlides();
 
 function showSlides() {
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].setAttribute("hidden", true);
   }
 
   slideIndex++;
   if (slideIndex > slides.length) {
     slideIndex = 1;
   }
-  slides[slideIndex - 1].style.display = "flex";
+  slides[slideIndex - 1].removeAttribute("hidden");
 
   domEl.dots.forEach((dot) => {
-    dot.classList.remove("show");
+    dot.setAttribute("aria-selected", false);
 
     if (slides[slideIndex - 1].dataset.id === dot.dataset.id) {
-      dot.classList.add("show");
+      dot.setAttribute("aria-selected", true);
     }
   });
   setTimeout(showSlides, 4000);

@@ -1,6 +1,10 @@
 import * as domEl from "./dom-elements";
+import { changeTabFocus } from "../shared";
 
-domEl.numberList.forEach((numb) => {
+domEl.tablist.addEventListener("keydown", () =>
+  changeTabFocus(event, domEl.tabs)
+);
+domEl.tabs.forEach((numb) => {
   numb.addEventListener("click", (e) => {
     const targetNumber = e.target;
     domEl.techInfo.forEach((info) => {
@@ -14,6 +18,12 @@ domEl.numberList.forEach((numb) => {
         }
         targetNumber.className += " activeBtn";
       }
+      domEl.techImage.forEach((image) => {
+        image.setAttribute("hidden", true);
+        if (image.dataset.id === targetNumber.dataset.id) {
+          image.removeAttribute("hidden");
+        }
+      });
     });
   });
 });

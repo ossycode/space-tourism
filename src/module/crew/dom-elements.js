@@ -1,7 +1,6 @@
-export const slidePanel = document.querySelectorAll(".crew-info");
+export const slidePanel = document.querySelectorAll(".crew-details");
+export const tablist = document.querySelector("[role='tablist']");
 
-export const dots = document.querySelectorAll(".circle-container__dot");
-
-export const slideInfo = document.querySelectorAll(".crew-info");
+export const dots = document.querySelectorAll(".dot");
 
 export const slideImage = document.querySelectorAll(".crew-image");

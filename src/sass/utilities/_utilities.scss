@@ -40,6 +40,7 @@
 
   p:not([class]) {
     max-width: 45ch;
+    color: hsl(var(--clr-light));
   }
 
   @include respond(desk-tabLand) {

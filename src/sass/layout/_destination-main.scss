@@ -6,9 +6,10 @@
     "tabs"
     "content";
   --flow-space: 2rem;
-  & > img {
+  & > picture {
     grid-area: image;
     max-width: 60%;
+    align-self: start;
   }
 
   & > .tab-list {
@@ -18,8 +19,9 @@
       justify-self: start;
     }
 
-    button {
+    a {
       background-color: transparent;
+      text-decoration: none;
     }
   }
 
@@ -39,8 +41,11 @@
       ". image tabs ."
       ". image content .";
 
-    img {
+    picture {
       max-width: 90%;
+    }
+
+    p {
     }
   }
 }

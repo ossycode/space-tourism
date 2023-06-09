@@ -1,5 +1,16 @@
+@use "../abstracts/mixins" as *;
+
 .technology-home {
-  background-image: url(/dist/assets/technology/background-technology-desktop.jpg);
+  background-image: url("/dist/assets/technology/background-technology-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include respond(tabLand-tabport) {
+    background-image: url("/dist/assets/technology/background-technology-tablet.jpg");
+  }
+
+  @include respond(desk-tabLand) {
+    background-position: center center;
+    background-image: url("/dist/assets/technology/background-technology-desktop.jpg");
+  }
 }
